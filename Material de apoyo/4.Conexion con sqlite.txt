@@ -1,0 +1,2 @@
+Conexión con sqlite: 
+https://drive.google.com/file/d/1331fcF3kQPvaEeUhVVSefsFx46aUe37x/view?usp=sharing
