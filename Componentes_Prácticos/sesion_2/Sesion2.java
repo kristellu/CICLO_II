@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
-public class Listas{
+public class Sesion2{
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
 
-        System.out.println("Introduzca el numero de productos");
+        System.out.println("Introduzca el numero de productos: ");
         int productos = leer.nextInt();
 
         int[] listaCodigo = new int[productos];
         int[] listaCantidadBodega = new int[productos];
         int[] listaCantidadMinima = new int[productos];
-        String resultado = "Codigos de productos que son necesarios pedir: ";
+        
         
         for (int i = 0; i < productos; i++) {
             System.out.println("Introduzca el codigo del producto " + i);
@@ -23,14 +23,27 @@ public class Listas{
             System.out.println("Introduzca la cantidad minima requerida " + i);
             listaCantidadMinima[i] = leer.nextInt();
         }
-        leer.close();
+        
+        System.out.println("Codigos de productos que son necesarios pedir: ");
+        int may=-1, cMay=0, men=100000, cMen=0;
 
         for (int i = 0; i < productos; i++) {
             if (listaCantidadBodega[i] < listaCantidadMinima[i]) {
-                resultado += listaCodigo[i] + ", ";
+                System.out.println(listaCodigo[i]);
+            }
+            
+            if(listaCantidadBodega[i] < men){
+                men = listaCantidadBodega[i];
+                cMen = listaCodigo[i];
+            }
+            
+            if(listaCantidadBodega[i] > may){
+                may = listaCantidadBodega[i];
+                cMay = listaCodigo[i];
             }
         }
-
-        System.out.println(resultado);
+        
+        System.out.println("Codigo con mayor numero de unidades en bodega: " + cMay);
+        System.out.println("Codigo con menor numero de unidades en bodega: " + cMen);
     }
 }

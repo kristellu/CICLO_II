@@ -1,8 +1,0 @@
-Ejercicio menu (SOLUCION EN CARPETA): 
-https://drive.google.com/file/d/12XyIHIOGqhhqjqNTxEKJBmNMy-3yZmSw/view?usp=sharing 
-
-Programación orienta objetos: 
-https://drive.google.com/file/d/1oMHJlSxADFeEHNLgUKbj4c9sKT27dBkS/view?usp=sharing
-
-Conexión con sqlite: 
-https://drive.google.com/file/d/1331fcF3kQPvaEeUhVVSefsFx46aUe37x/view?usp=sharing
