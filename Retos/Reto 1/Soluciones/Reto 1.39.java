@@ -1,0 +1,143 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package RetosCiclo2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Asus
+ */
+public class Reto39 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int n;
+        String datos[][] = new String[100][7];
+        int puntaje[] = new int[100];
+
+        Scanner leer = new Scanner(System.in);
+
+        //System.out.println("Digite el número de pacientes: ");
+        n = leer.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            //System.out.println("Digite el nombre del paciente " + (i + 1));
+            datos[i][0] = leer.next();
+            //System.out.println("Digite la cedula del paciente " + (i + 1));
+            datos[i][1] = leer.next();
+            //System.out.println("Digite el género del paciente, M para masculino y F para femenino");
+            datos[i][2] = leer.next();
+            for (int j = 3; j < 7; j++) {
+                //System.out.println("Digite la muestra " + (j - 2) + " para el paciente " + (i + 1));
+                datos[i][j] = leer.next();
+            }
+        }
+        
+        double mM1=1000000;
+        String pacM1 = "";
+        for (int i = 0; i < n; i++) {
+            System.out.println("Para el paciente " + (i + 1));
+            int ptpp = 0;
+
+            double m1 = Double.parseDouble(datos[i][3]);
+            if (datos[i][2].equals("M")) {
+                //Masculino
+                if (m1 < 0.74 || m1 > 1.35) {
+                    ptpp += 10;
+                }
+            } else {
+                //Femenino
+                if (m1 < 0.59 || m1 > 1.04) {
+                    ptpp += 10;
+                }
+            }
+
+            double m2 = Double.parseDouble(datos[i][4]);
+            if (datos[i][2].equals("M")) {
+                //Masculino
+                if (m2 < 0.74 || m2 > 1.35) {
+                    ptpp += 10;
+                }
+            } else {
+                //Femenino
+                if (m2 < 0.59 || m2 > 1.04) {
+                    ptpp += 10;
+                }
+            }
+
+            double m3 = Double.parseDouble(datos[i][5]);
+            if (datos[i][2].equals("M")) {
+                //Masculino
+                if (m3 < 14 || m3 > 26) {
+                    ptpp += 10;
+                }
+            } else {
+                //Femenino
+                if (m3 < 11 || m3 > 20) {
+                    ptpp += 10;
+                }
+            }
+            
+            double m4 = Double.parseDouble(datos[i][6]);
+            if (datos[i][2].equals("M")) {
+                //Masculino
+                if (m4 < 14 || m4 > 26) {
+                    ptpp += 10;
+                }
+            } else {
+                //Femenino
+                if (m4 < 11 || m4 > 20) {
+                    ptpp += 10;
+                }
+            }
+
+            System.out.println("Puntaje obtenido: " + ptpp);
+            puntaje[i] = ptpp;
+
+            switch (ptpp) {
+                case 0:
+                    System.out.println("Categorización riesgo: Sin Riesgo");
+                    break;
+                case 10:
+                    System.out.println("Categorización riesgo: Bajo");
+                    break;
+                case 20:
+                    System.out.println("Categorización riesgo: Medio");
+                    break;
+                case 30:
+                    System.out.println("Categorización riesgo: Medio");
+                    break;
+                case 40:
+                    System.out.println("Categorización riesgo: Alto");
+                    break;
+            }
+
+            puntaje[i] = ptpp;
+            
+            System.out.println("Promedio en sangre: " + (m1+m2)/2);
+            System.out.println("Promedio en orina: " + (m3+m4)/2); 
+            
+            if (m1 < mM1) {
+                mM1 = m1;
+                pacM1 = datos[i][1];
+            }
+        }
+        
+        System.out.println("El paciente con la primera muestra de creatinina más baja es: " + pacM1); 
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("");
+            for (int j = 0; j < 6; j++) {
+                System.out.print(datos[i][j] + " ");
+            }
+        }
+    }
+
+}
