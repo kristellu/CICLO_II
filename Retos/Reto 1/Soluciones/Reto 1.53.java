@@ -7,7 +7,7 @@ public class Reto53 {
     static int promt;
     
     public static void level(double num){
-        if(num >= 0 && num <= 5){System.out.println("Continuar el control y la vigilancia"); return;}
+        if(num >= 0 && num <= 5){System.out.println("SIN RIESGO"); return;}
         if(num > 5 && num <= 14){System.out.println("BAJO"); return;}
         if(num > 14 && num <= 35){System.out.println("MEDIO"); return;}
         if(num > 35 && num <= 80){System.out.println("ALTO"); return;}
@@ -24,35 +24,36 @@ public class Reto53 {
     
     public static void main(String args[]) {
         
-        double data[] = new double[6];
         double sum = 0;
         double prom;
         int tipop;
         double cont = 0;
         double porc;
-        
+        int n;
         Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        double data[] = new double[n];
         
-        for(int i = 0; i<= 5; i++){
+        for(int i = 0; i< n; i++){
             data[i] = sc.nextDouble();
             sum += data[i];
         }
         
-        prom = sum/6;
+        prom = sum/n;
         
         Arrays.sort(data);
         
         level(prom);
         porcentaje(prom);
         tipop = promt;
-        for(int i = 0; i<= 5; i++){
+        for(int i = 0; i< n; i++){
             porcentaje(data[i]);
             if(promt == tipop){
                 cont++;
             }
         }
         
-        porc = cont/6*100;
+        porc = cont/n*100;
         System.out.println(String.format("%.2f", porc));
         level(data[0]);
     }

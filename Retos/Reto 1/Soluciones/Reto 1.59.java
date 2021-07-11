@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.*;
 
-public class Reto59{
+public class Resto59{
     
     public static void level(double num){
         if(num >= 0 && num <= 5){System.out.println("Continuar el control y la vigilancia"); return;}
@@ -14,15 +14,16 @@ public class Reto59{
     
     public static void main(String args[]) {
         
-        double data[] = new double[6];
         double sum = 0;
         double prom;
         double cont1 = 0;
         double cont2 = 0;
-        
+        int n;
         Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        double data[] = new double[n];
         
-        for(int i = 0; i<= 5; i++){
+        for(int i = 0; i< n; i++){
             data[i] = sc.nextDouble();
             sum += data[i];
              if(data[i] > 35 && data[i] <= 80){
@@ -36,12 +37,12 @@ public class Reto59{
             }
         }
         
-        prom = sum/6;
+        prom = sum/n;
         
         Arrays.sort(data);
         
         level(prom);
-        System.out.println(String.format("%.2f", cont1/6*100));
+        System.out.println(String.format("%.2f", cont1/n*100));
         if(cont2>= 1){
             System.out.println("VERDADERO");
         }else{System.out.println("FALSO");}
