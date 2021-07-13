@@ -14,6 +14,9 @@ Carpetas por sesión con enunciado de actividad y su respectiva solución.
 **Material de apoyo (MA):**
 Contiene manual Java, videos tutoriales y desarrollo de ejemplos básicos.
 
+**Retos:**
+Carpeta de ejercicios reto.
+
 ## Pasos para descarga
 1. Clonar repositorio desde vscode https://github.com/kristellu/CICLO_II_MINTIC.git (botón Code) 
 2. Acceder a los archivos
