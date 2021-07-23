@@ -10,10 +10,14 @@
  */
 public class CuerpoDeAgua extends ObjetoGeografico{
 
+    private String tipoDeCuerpoDeAgua;
+    private String tipoDeAgua;
     private double irca;
 
-    public CuerpoDeAgua(String nombre, double id, String municipio, double irca) {
+    public CuerpoDeAgua(String nombre, double id, String municipio, String tipoDeCuerpoDeAgua, String tipoDeAgua, double irca) {
         super(nombre, id, municipio);
+        this.tipoDeCuerpoDeAgua = tipoDeCuerpoDeAgua;
+        this.tipoDeAgua = tipoDeAgua;
         this.irca = irca;
     }
 
@@ -23,8 +27,8 @@ public class CuerpoDeAgua extends ObjetoGeografico{
 
     public void setIrca(double irca) {
         this.irca = irca;
-    }   
-    
+    }
+
     public String nivel() {
         String nivel_riesgo = "";
         if (irca >= 0 && irca <= 5) {

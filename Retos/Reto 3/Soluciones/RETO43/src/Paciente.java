@@ -8,7 +8,6 @@ public class Paciente extends Persona{
         this.enfermedad = enfermedad;
     }
 
-   
     public String getEps() {
         return eps;
     }

@@ -1,72 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.io.IOException;
 
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-/**
- *
- * @author acer nitro5
- */
-public class App {
-
-    /**
-     * @param args the command line arguments
-     */
+public class App extends Application {
     public static void main(String[] args) {
-        // TODO code application logic here
-        int num;
-        CuerpoDeAgua[] datos = new CuerpoDeAgua[100];
-        Scanner sc = new Scanner(System.in);
-        num = Integer.parseInt(sc.nextLine());
-        for (int i = 0; i < num; i++) {
-            String[] lines = sc.nextLine().split(" ");
-            datos[i] = new CuerpoDeAgua(lines[0], Double.parseDouble(lines[1]),
-                    lines[2], Double.parseDouble(lines[3]));
-        }
-        sc.close();
-        //Nombre de cada cuerpo de agua
-        String nombre;
-        for (int i = 0; i < num; i++) {
-            nombre = datos[i].getNombre();
-            System.out.println(nombre);
-        }
-
-        //Numero de cuerpos de agua con nivel de riesgo BAJO o inferior
-        double cont = 0;
-        for (int i = 0; i < num; i++) {
-            if (datos[i].getIrca() <= 14) {
-                cont++;
-            }
-
-        }
-        System.out.println(String.format("%.2f", cont));
-
-        //Nombre de cuerpos de agua con nivel de riesgo BAJO
-        double contm = 0;
-        for (int i = 0; i < num; i++) {
-            if (datos[i].getIrca() > 5 && datos[i].getIrca() <= 14) {
-                System.out.print(datos[i].getNombre() + " ");
-                contm++;
-            }
-        }
-        if (contm == 0) {
-            System.out.print("NA");
-        }
-
-        //Nombre del cuerpo con irca mas alto e id
-        double max = -1;
-        String nombre_alto = "";
-        for (int i = 0; i < num; i++) {
-            if (datos[i].getIrca() > max) {
-                max = datos[i].getIrca();
-                nombre_alto = datos[i].getNombre() + " " + String.format("%.2f", datos[i].getId());
-            }
-        }
-        System.out.println("\n" + nombre_alto);
-
+        launch(args);
     }
+    @Override
+    public void start(Stage primaryStage) throws IOException {
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+
+        primaryStage.setTitle("RETO 48");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 }

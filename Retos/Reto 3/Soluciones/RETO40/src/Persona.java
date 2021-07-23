@@ -14,14 +14,13 @@ public class Persona {
     public String getCedula() {
         return cedula;
     }
-    
+
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
 
 }

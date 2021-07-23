@@ -1,71 +1,24 @@
-import java.util.Scanner;
+import java.io.IOException;
 
-public class App {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-    public static boolean buscarElem(String[] vec, String elem) {
-        boolean res = false;
-        for (int  i = 0; i  < vec.length; i ++) {
-            if (elem.equals(vec[i])) {
-                return true;
-            }
-        }
-        return res;
+public class App extends Application {
+    public static void main(String[] args) {
+        launch(args);
     }
+    @Override
+    public void start(Stage primaryStage) throws IOException {
 
-    public static void contarCiudades(Paciente[] pxs) {
-        String[] visitadas = new String[pxs.length];
-        int pos = 0;
-        for (int i = 0; i < pxs.length; i++) visitadas[i] = "";
-        for (Paciente px : pxs) {
-            if(buscarElem(visitadas, px.getCiudad()) == false) {
-                visitadas[pos] = px.getCiudad();
-                pos += 1;
-            }
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
 
-        int[] cont = new int[pos];
-        for (int i = 0; i < pos; i++) {
-            for (Paciente px : pxs) {
-                if (visitadas[i].equals(px.getCiudad())) {
-                    cont[i] += 1;
-                }
-            }
-        }
-
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < cont.length; i++) {
-            if (cont[i] < min) min = cont[i];
-            System.out.println(visitadas[i] + " " + cont[i]);
-        }
-        for (int i = 0; i < cont.length; i++) {
-            if (cont[i] == min) {
-                System.out.println(visitadas[i]);
-                break;
-            }
-        }
-    }
-
-    public static void main(String[] args) throws Exception {
-        Scanner leer = new Scanner(System.in);
-
-        int cantPx = Integer.parseInt(leer.nextLine());
-        Paciente[] datos = new Paciente[cantPx];
-
-        for (int i = 0; i < cantPx; i++) {
-            String[] paciente = leer.nextLine().split("-");
-            Paciente px = new Paciente(paciente[0], paciente[1], paciente[2], paciente[3], paciente[4], paciente[5]);
-
-            datos[i] = px;
-        }
-
-        leer.close();
-
-        contarCiudades(datos);
-        for (Paciente px : datos) {
-            if (px.clasificarEdad().equalsIgnoreCase("tercera edad")) {
-                System.out.println(px.getNombre() + " " + px.getCedula());
-            }
-        }
-
+        primaryStage.setTitle("RETO 46");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }

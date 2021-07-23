@@ -15,7 +15,6 @@ public class Paciente extends Persona {
         this.fiebre = fiebre;
     }
 
-    
     public String getDiarrea() {
         return diarrea;
     }public String getDolor() {
