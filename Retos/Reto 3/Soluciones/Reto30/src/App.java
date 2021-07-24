@@ -1,10 +1,8 @@
-import javafx.stage.Stage;             // |
-import javafx.scene.Group;             // |\ Librerías necesarias
+import javafx.stage.Stage; 
 import javafx.scene.Parent;
 import javafx.scene.Scene;             // |/ Para el ejemplo
 import javafx.application.Application; // |
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;    // |
 
 public class App extends Application {
 

@@ -1,154 +1,29 @@
-import java.util.Scanner;
-// ¿Cuantos de los examenes tienen una calificación mayor a la del promedio del grupo?
-// ¿Que porcentaje de los exámenes fueron Sobresaliente?
-// ¿Cuál es la materia con el mejor desempeño promedio para el genero femenino?
-// ¿Cuál es el estudiante con el mejor desempeño para la materia informatica?
+import javafx.stage.Stage;             // |
+import javafx.scene.Group;             // |\ Librerías necesarias
+import javafx.scene.Parent;
+import javafx.scene.Scene;             // |/ Para el ejemplo
+import javafx.application.Application; // |
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;    // |
 
-public class App {
+public class App extends Application {
 
-	static double[][] gradingScale0 = {
-	    {0,1},
-	    {1,2.5},
-	    {2.5,3,5},
-	    {3.5,4.5},
-	    {4.5,5}
-	};
-	static double[][] gradingScale1 = {
-	    {0,3},
-	    {3,6},
-	    {6,8},
-	    {8,9},
-	    {9,10}
-	};
-	static double[][] gradingScale2 = {
-	    {0,30},
-	    {30,60},
-	    {60,80},
-	    {80,90},
-	    {90,100}
-	};
-    static String[] subjects = {"informatica", "fisica", "quimica"};
-	static double[][] gradingScale = gradingScale0;
-    static String[] students = { "armando", "nicolas", "daniel", "maria", "marcela", "alexandra"};
-    static String[] genders = {"m", "f"};
-    static Estudiante[] data = new Estudiante[6];
-    public static void main(String[] args) throws Exception {
-        readData();
-        print(getTestsPerformanceOverAvg(data));
-        print(getExamsPercentajeOutstanding(data));
-        print(subjects[getBestSubjectForFemales(data)]);
-        print(students[getStudentBestGradeBySubject(data) -1]);
-    }
-    public static void print(Object a){
-        if(a instanceof Double){
-            System.out.printf("%.2f\n",a);
-        }else{
-            System.out.println(a);
-        }
-        
-    }     
+	public static void main(String[] args) {
+		//Esto se utiliza para ejecutar la aplicación 
+		//es como el new Contructor();
+		launch(args);
+	}
 
-    public static void readData(){
+	//Este metodo es obligatorio
+	public void start(Stage primaryStage) throws Exception {
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ruta absoluta del archivo fxml a mostrar")); 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout.fxml")); 
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
 
-        Scanner scanLine = new Scanner(System.in);
-        int n = scanLine.nextInt();
-        scanLine.nextLine();
-
-        for(int i = 0; i < n/3; i++){
-            String[] line1 = scanLine.nextLine().split(" ");
-            String[] line2 = scanLine.nextLine().split(" ");
-            String[] line3 = scanLine.nextLine().split(" ");
-            double id = Double.parseDouble(line1[0]);
-            double gen = Double.parseDouble(line1[1]);
-            double notaQ = Double.parseDouble(line1[3]);
-            double notaI = Double.parseDouble(line2[3]);
-            double notaH = Double.parseDouble(line3[3]);
-            data[i] = new Estudiante(id, gen, notaQ, notaI, notaH);
-        }
-        scanLine.close();
-    }
-
-    // '¿Cuál es el desempeño promedio de todo el grupo?'
-    public static double getAverageAllGrades(Estudiante[] data){
-        double sum = 0;
-        for(int i = 0; i < data.length; i++){
-            sum += data[i].getNotaFisica() + data[i].getNotaInformatica() + data[i].getNotaQuimica() ;
-        }
-        return (sum / (data.length*3));
-    }
-
-
-    public static boolean isAprobbed(double grade){
-        return gradingScale[2][0] < grade;
-    }
-
-    public static int getTestsPerformanceOverAvg(Estudiante[] data){
-        int count = 0;
-        double avg = getAverageAllGrades(data);
-        for(int i = 0; i < data.length; i++){
-            if(data[i].getNotaFisica() > avg)
-                count++;
-            if(data[i].getNotaInformatica() > avg)
-                count++;
-            if(data[i].getNotaQuimica() > avg)
-                count++;
-        }
-        return count;
-    }
-
-    public static int getExamsOutstanding(Estudiante[] data){
-        int count = 0;
-        for(int i = 0; i < data.length; i++){
-            if(gradingScale[3][0] < data[i].getNotaFisica() && gradingScale[3][1] >= data[i].getNotaFisica())
-                count++;
-            if(gradingScale[3][0] < data[i].getNotaInformatica() && gradingScale[3][1] >= data[i].getNotaInformatica())
-                count++;
-            if(gradingScale[3][0] < data[i].getNotaFisica() && gradingScale[3][1] >= data[i].getNotaFisica())
-                count++;
-        }
-        return count;
-    }
-    public static double getExamsPercentajeOutstanding(Estudiante[] data){
-        return (double)(getExamsOutstanding(data)) / data.length;
-    }
-
-    public static int getBestSubjectForFemales(Estudiante[] data){
-        double[] subjectsSum = {0,0,0};
-        int[] subjectsCount = {0,0,0};
-
-        for(int j = 0; j < data.length; j++){
-            if(data[j].getGenero() == 1.0){
-                subjectsSum[0] = subjectsSum[0] + data[j].getNotaInformatica();
-                subjectsSum[1] = subjectsSum[0] + data[j].getNotaFisica();
-                subjectsSum[2] = subjectsSum[0] + data[j].getNotaQuimica();
-                subjectsCount[0] = subjectsCount[0] + 1;
-                subjectsCount[1] = subjectsCount[1] + 1;
-                subjectsCount[2] = subjectsCount[2] + 1;
-            }
-        }
-        
-        double auxMax = 0;
-        int auxIndex = -1;
-        for(int i = 0; i < subjectsSum.length; i++){
-            if(subjectsCount[i] != 0 && auxMax < subjectsSum[i]/subjectsCount[i]){
-                auxMax = subjectsSum[i]/subjectsCount[i];
-                auxIndex = i;
-            }
-                
-        }
-        return auxIndex;
-    }
-
-    public static int getStudentBestGradeBySubject(Estudiante[] data){
-        double max = data[0].getNotaInformatica();
-        int indMax = (int)data[0].getId();
-        for(int i = 0; i < data.length; i++){
-            if(data[i].getNotaInformatica() > max){
-                max = data[i].getNotaInformatica();
-                indMax = (int)data[i].getId();
-            }
-        }
-        return indMax;
+        primaryStage.setTitle("Reto Grupo 30");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
 }
