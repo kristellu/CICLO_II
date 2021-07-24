@@ -1,7 +1,7 @@
 import java.util.Formatter;
 import java.util.Scanner;
 
-public class SchoolGradingSystem extends SchoolGrading{
+public class SchoolGradingSystem extends GradingSystem{
     
     private double data[][];
 
