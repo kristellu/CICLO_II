@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="476.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegistroVentaController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="640.0" prefWidth="577.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="145.0" layoutY="23.0" prefHeight="27.0" prefWidth="342.0" text="Registro de venta Almacén la Maravilla" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TabPane layoutY="69.0" prefHeight="437.0" prefWidth="577.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Registro de venta">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="552.0">
+                           <children>
+                              <Label layoutX="39.0" layoutY="85.0" text="Producto:">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="41.0" layoutY="154.0" text="Cantidad">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cantidad" layoutX="373.0" layoutY="151.0" />
+                              <Label layoutX="39.0" layoutY="118.0" text="Cliente:">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="39.0" layoutY="34.0" prefHeight="27.0" prefWidth="119.0" text="Nueva venta" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="buttonCrear" blendMode="SRC_ATOP" layoutX="127.0" layoutY="266.0" mnemonicParsing="false" onAction="#createSale" prefHeight="49.0" prefWidth="342.0" text="REGISTRAR VENTA">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ChoiceBox fx:id="selectProducto" layoutX="276.0" layoutY="81.0" prefHeight="25.0" prefWidth="247.0" />
+                              <ChoiceBox fx:id="selectCliente" layoutX="276.0" layoutY="114.0" prefHeight="25.0" prefWidth="247.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Creación de clientes">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="577.0">
+                           <children>
+                              <Label layoutX="106.0" layoutY="58.0" text="Identificación (C.C):">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="106.0" layoutY="152.0" text="Apellido:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="107.0" layoutY="105.0" text="Nombre:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="107.0" layoutY="193.0" text="Género (F/M)">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="idCliente" layoutX="287.0" layoutY="54.0" prefHeight="25.0" prefWidth="184.0" />
+                              <TextField fx:id="nombreCliente" layoutX="287.0" layoutY="101.0" prefHeight="25.0" prefWidth="182.0" />
+                              <TextField fx:id="apellidoCliente" layoutX="287.0" layoutY="148.0" prefHeight="25.0" prefWidth="182.0" />
+                              <TextField fx:id="generoCliente" layoutX="287.0" layoutY="189.0" prefHeight="25.0" prefWidth="183.0" />
+                              <Button fx:id="buttonCreateClient" layoutX="146.0" layoutY="237.0" mnemonicParsing="false" onAction="#createClient" prefHeight="41.0" prefWidth="282.0" text="AÑADIR CLIENTE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
