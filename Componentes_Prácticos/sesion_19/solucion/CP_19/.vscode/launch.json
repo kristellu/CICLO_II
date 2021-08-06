@@ -14,17 +14,9 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
+            "vmArgs": "--module-path C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "App",
-            "vmArgs": "--module-path C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
-            "projectName": "Reto30_2097e310"
-        },
-        {
-            "type": "java",
-            "name": "Launch reto3",
-            "request": "launch",
-            "mainClass": "reto3",
-            "vmArgs": "--module-path C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
-            "projectName": "Reto30_2097e310"
+            "projectName": "CP_19_c045b502"
         }
     ]
 }

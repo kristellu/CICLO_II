@@ -17,6 +17,15 @@
         "c:\\Librerias\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
         "c:\\Librerias\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
         "c:\\Librerias\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar",
-        "c:\\Librerias\\Sqlite3\\sqlite-jdbc-3.34.0.jar"
+        "c:\\Librerias\\Sqlite3\\sqlite-jdbc-3.34.0.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.base.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.controls.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.media.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar",
+        "c:\\Users\\KRISTELL U\\Documents\\MINTIC\\CICLO-II\\openjfx-11.0.2_windows-x64_bin-sdk\\javafx-sdk-11.0.2\\lib\\sqlite-jdbc-3.36.0.1.jar"
     ]
 }
