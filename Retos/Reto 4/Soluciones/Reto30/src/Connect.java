@@ -6,28 +6,29 @@ public class Connect {
 
     private Connection conn;
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         Connection conn = null;
         try {
-            String url = "C:/Users/Asus/Documents/VSCode/Reto4_Sol/Reto30/bd/miBasesita.db"; 
-            conn = DriverManager.getConnection("jdbc:sqlite:"+url);
-            if (conn!=null) {
+            String url = "C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/Repo/CICLO_II_MINTIC/Retos/Reto~4/Reto30/bd/miBasesita.db";
+
+            conn = DriverManager.getConnection("jdbc:sqlite:" + url);
+            if (conn != null) {
                 System.out.println("Conectado");
             }
-        }catch (SQLException ex) {
-            System.err.println("No se ha podido conectar a la base de datos\n"+ex.getMessage());
+        } catch (SQLException ex) {
+            System.err.println("No se ha podido conectar a la base de datos\n" + ex.getMessage());
         }
-        
+
         return conn;
     }
 
-    public void close(){
+    public void close() {
         try {
             conn.close();
         } catch (SQLException ex) {
-            System.err.println("No se ha cerrar\n"+ex.getMessage());
+            System.err.println("No se ha cerrar\n" + ex.getMessage());
         }
 
     }
-    
+
 }
