@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="466.0" prefWidth="426.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CalculatorController">
+  <children>
+      <Pane prefHeight="476.0" prefWidth="426.0" style="-fx-background-color: trsnsparent;">
+         <children>
+            <GridPane blendMode="MULTIPLY" layoutX="9.0" layoutY="135.0" pickOnBounds="false" prefHeight="310.0" prefWidth="408.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="74.79999389648438" minHeight="10.0" prefHeight="71.59998168945313" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="73.20001831054688" minHeight="10.0" prefHeight="73.20001831054688" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button fx:id="button7" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="7" userData="7" onAction="#addNumber"/>
+                  <Button fx:id="button8" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="8" GridPane.columnIndex="1" userData="8" onAction="#addNumber" />
+                  <Button fx:id="button9" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="9" GridPane.columnIndex="2" userData="9" onAction="#addNumber" />
+                  <Button fx:id="button4" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="4" GridPane.rowIndex="1" userData="4" onAction="#addNumber" />
+                  <Button fx:id="button5" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" userData="5" onAction="#addNumber"/>
+                  <Button fx:id="button6" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" userData="6" onAction="#addNumber" />
+                  <Button fx:id="button1" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="1" GridPane.rowIndex="2" userData="1" onAction="#addNumber" />
+                  <Button fx:id="button2" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" userData="2" onAction="#addNumber" />
+                  <Button fx:id="button3" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" userData="3" onAction="#addNumber" />
+                  <Button fx:id="buttonDiv" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="/" GridPane.columnIndex="3" userData="/" onAction="#addOperator" />
+                  <Button fx:id="buttonMul" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="x" GridPane.columnIndex="3" GridPane.rowIndex="1" userData="x" onAction="#addOperator" />
+                  <Button fx:id="buttonRest" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" userData="-" onAction="#addOperator" />
+                  <Button fx:id="button0" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" userData="0" onAction="#addNumber" />
+                  <Button fx:id="buttonAdd" alignment="CENTER" blendMode="MULTIPLY" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="+" textAlignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="3" userData="+" onAction="#addOperator">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonEqu" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#getTotal" prefHeight="58.0" prefWidth="99.0" text="=" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button fx:id="buttonClear" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="58.0" prefWidth="99.0" text="C" GridPane.rowIndex="3"  onAction="#clear" />
+               </children>
+            </GridPane>
+            <TextField fx:id="resultText" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="24.0" prefHeight="99.0" prefWidth="399.0" text="0">
+               <font>
+                  <Font name="Arial" size="48.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+  </children>
+</VBox>
