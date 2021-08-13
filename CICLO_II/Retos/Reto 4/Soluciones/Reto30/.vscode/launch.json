@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "vmArgs": "--module-path C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "Reto30_2097e310"
+        },
+        {
+            "type": "java",
+            "name": "Launch reto3",
+            "request": "launch",
+            "mainClass": "reto3",
+            "vmArgs": "--module-path C:/Users/KRISTE~1/Documents/MINTIC/CICLO-II/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "projectName": "Reto30_2097e310"
+        }
+    ]
+}
