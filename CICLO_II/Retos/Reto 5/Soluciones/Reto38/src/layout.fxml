@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="450.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="234.0" layoutY="14.0" text="Detección de Enfermedades">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TabPane layoutX="62.0" layoutY="55.0" prefHeight="331.0" prefWidth="529.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Ingreso de Datos">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="229.0" prefWidth="310.0">
+                           <children>
+                          <Label alignment="CENTER" layoutX="14.0" layoutY="55.0" style="&#10;" text="Nombre" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                            <font>
+                              <Font size="18.0" />
+                            </font>
+                          </Label>
+                              <Label alignment="CENTER" layoutX="14.0" layoutY="82.0" style="&#10;" text="Cedula" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="108.0" style="&#10;" text="Genero" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nombre" layoutX="99.0" layoutY="56.0" />
+                              <TextField fx:id="cedula" layoutX="99.0" layoutY="83.0" />
+                              <TextField fx:id="genero" layoutX="99.0" layoutY="109.0" />
+                              <Label alignment="CENTER" layoutX="266.0" layoutY="56.0" style="&#10;" text="Muestra 1" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra2" layoutX="350.0" layoutY="84.0" />
+                              <Label alignment="CENTER" layoutX="266.0" layoutY="83.0" style="&#10;" text="Muestra 2" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra1" layoutX="350.0" layoutY="57.0" />
+                              <Label alignment="CENTER" layoutX="266.0" layoutY="109.0" style="&#10;" text="Muestra 3" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra3" layoutX="350.0" layoutY="110.0" />
+                              <Button fx:id="ingresar" layoutX="227.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicIngresar" text="Ingresar" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Procesar">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="529.0">
+                           <children>
+                              <TextArea fx:id="entrada" layoutX="42.0" layoutY="56.0" prefHeight="219.0" prefWidth="183.0" />
+                              <Button fx:id="procesar" layoutX="242.0" layoutY="150.0" mnemonicParsing="false" onAction="#clicProcesar" text="Procesar" />
+                              <TextArea fx:id="salida" layoutX="321.0" layoutY="51.0" prefHeight="223.0" prefWidth="187.0" />
+                              <Button fx:id="obtener" layoutX="42.0" layoutY="26.0" mnemonicParsing="false" onAction="#clicObtener" text="Obtener Datos" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Editar-Consultar-Eliminar">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="34.0" layoutY="124.0" style="&#10;" text="Nombre" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="30.0" layoutY="54.0" style="&#10;" text="Cedula" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="34.0" layoutY="151.0" style="&#10;" text="Genero" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nombre1" layoutX="117.0" layoutY="125.0" />
+                              <TextField fx:id="cedula1" layoutX="102.0" layoutY="53.0" />
+                              <TextField fx:id="genero1" layoutX="117.0" layoutY="152.0" />
+                              <Label alignment="CENTER" layoutX="32.0" layoutY="184.0" style="&#10;" text="Muestra 1" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra21" layoutX="117.0" layoutY="212.0" />
+                              <Label alignment="CENTER" layoutX="32.0" layoutY="211.0" style="&#10;" text="Muestra 2" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra11" layoutX="117.0" layoutY="185.0" />
+                              <Label alignment="CENTER" layoutX="32.0" layoutY="238.0" style="&#10;" text="Muestra 3" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="muestra31" layoutX="117.0" layoutY="239.0" />
+                              <Button fx:id="consultar" layoutX="285.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicConsultar" text="Consultar" />
+                              <Button fx:id="editar" layoutX="309.0" layoutY="140.0" mnemonicParsing="false" onAction="#clicEditar" text="Editar" />
+                              <Button fx:id="eliminar" layoutX="309.0" layoutY="185.0" mnemonicParsing="false" onAction="#clicEliminar" text="Eliminar" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
