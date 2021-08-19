@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="569.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TabPane layoutX="14.0" layoutY="14.0" prefHeight="355.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Médico">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="615.0">
+                           <children>
+                              <Label fx:id="mNameLabel" layoutY="6.0" text="Nombre " />
+                              <TextField fx:id="mNameTextField" layoutY="23.0" />
+                              <TextField fx:id="mIDTextField" layoutX="155.0" layoutY="23.0" />
+                              <TextField fx:id="mAgeTextField" layoutX="311.0" layoutY="23.0" />
+                              <TextField fx:id="mCityTextField" layoutX="467.0" layoutY="23.0" />
+                              <Label fx:id="mIDLabel" layoutX="155.0" layoutY="6.0" text="Cédula" />
+                              <Label fx:id="mAgeLabel" layoutX="311.0" layoutY="6.0" text="Edad" />
+                              <Label fx:id="mCityLabel" layoutX="467.0" layoutY="6.0" text="Ciudad" />
+                              <Label fx:id="epsLabel" layoutY="58.0" text="EPS" />
+                              <TextField fx:id="epsTextField" layoutY="75.0" />
+                              <Label fx:id="mClassficationLabel" layoutX="155.0" layoutY="58.0" text="Clasificación" />
+                              <TextField fx:id="mClassificationTextField" layoutX="155.0" layoutY="75.0" />
+                              <Label fx:id="mTreatmentLabel" layoutX="311.0" layoutY="58.0" text="Tratamiento" />
+                              <TextField fx:id="mTreatmentTextField" layoutX="311.0" layoutY="75.0" />
+                              <Button fx:id="addMedicButton" layoutX="467.0" layoutY="75.0" mnemonicParsing="false" onAction="#addMedicButtonClick" text="Agregar médico" />
+                              <Button fx:id="getAllMedicsButton" layoutX="548.0" layoutY="119.0" mnemonicParsing="false" onAction="#getAllMedicsButtonClick" prefHeight="44.0" prefWidth="61.0" text="Obtener médicos" wrapText="true" />
+                              <Button fx:id="editMedicButton" layoutX="304.0" layoutY="300.0" mnemonicParsing="false" onAction="#editMedicButtonClick" prefWidth="96.0" text="Editar médico" wrapText="true" />
+                              <Button fx:id="deleteMedicButton" layoutX="406.0" layoutY="300.0" mnemonicParsing="false" onAction="#deleteMedicButtonClick" text="Eliminar médico" wrapText="true" />
+                              <TextField fx:id="searchMIDTextField" layoutX="52.0" layoutY="300.0" />
+                              <Label fx:id="searchMIDLabel" layoutX="10.0" layoutY="304.0" text="Cédula" />
+                              <Button fx:id="searchMedicButton" layoutX="204.0" layoutY="300.0" mnemonicParsing="false" onAction="#searchMedicButtonClick" text="Buscar médico" />
+                              <TextArea fx:id="medicTextArea" disable="true" layoutX="10.0" layoutY="105.0" prefHeight="188.0" prefWidth="535.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Paciente">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="326.0" prefWidth="638.0">
+                           <children>
+                              <Label fx:id="pNameLabel" layoutX="2.0" layoutY="6.0" text="Nombre" />
+                              <Label fx:id="pIDLabel" layoutX="157.0" layoutY="6.0" text="Cédula" />
+                              <Label fx:id="pAgeLabel" layoutX="310.0" layoutY="6.0" text="Edad" />
+                              <Label fx:id="pCityLabel" layoutX="465.0" layoutY="6.0" text="Ciudad" />
+                              <Label fx:id="compositionLabel" layoutX="11.0" layoutY="56.0" text="Composición" />
+                              <Label fx:id="echogenicityLabel" layoutX="132.0" layoutY="56.0" text="Ecogenicidad" />
+                              <Label fx:id="formLabel" layoutX="254.0" layoutY="56.0" text="Forma" />
+                              <Label fx:id="marginLabel" layoutX="337.0" layoutY="56.0" text="Margen" />
+                              <Label fx:id="echogenicFociLabel1" layoutX="9.0" layoutY="90.0" text="Ninguno o grandes artefactos en cola de cometa" />
+                              <Label fx:id="echogenicFociLabel2" layoutX="9.0" layoutY="107.0" text="Macrocalcificaciones" />
+                              <Label fx:id="echogenicFociLabel3" layoutX="9.0" layoutY="124.0" text="Calcificaciones periféricas (borde)" />
+                              <Label fx:id="echogenicFociLabel4" layoutX="9.0" layoutY="142.0" text="Focos ecogénicos punteados" />
+                              <Label fx:id="noduleSizeLabel" layoutX="325.0" layoutY="90.0" text="Tamaño nodulo" />
+                              <TextField fx:id="pNameTextField" layoutY="23.0" />
+                              <TextField fx:id="pIDTextField" layoutX="155.0" layoutY="23.0" />
+                              <TextField fx:id="pAgeTextField" layoutX="310.0" layoutY="23.0" />
+                              <TextField fx:id="pCityTextField" layoutX="465.0" layoutY="23.0" />
+                              <TextField fx:id="compositionTextField" layoutX="88.0" layoutY="52.0" prefWidth="35.0" />
+                              <TextField fx:id="echogenicityTextField" layoutX="210.0" layoutY="52.0" prefHeight="25.0" prefWidth="35.0" />
+                              <TextField fx:id="formTextField" layoutX="295.0" layoutY="52.0" prefHeight="25.0" prefWidth="35.0" />
+                              <TextField fx:id="marginTextField" layoutX="385.0" layoutY="52.0" prefHeight="25.0" prefWidth="35.0" />
+                              <TextField fx:id="noduleSizeTextField" layoutX="415.0" layoutY="86.0" prefWidth="50.0" />
+                              <CheckBox fx:id="echogenicFociCheckBox1" layoutX="280.0" layoutY="90.0" mnemonicParsing="false" />
+                              <CheckBox fx:id="echogenicFociCheckBox2" layoutX="126.0" layoutY="107.0" mnemonicParsing="false" />
+                              <CheckBox fx:id="echogenicFociCheckBox3" layoutX="199.0" layoutY="124.0" mnemonicParsing="false" />
+                              <CheckBox fx:id="echogenicFociCheckBox4" layoutX="168.0" layoutY="142.0" mnemonicParsing="false" />
+                              <Label layoutX="8.0" layoutY="171.0" text="RESULTADOS">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="classificationLabel" layoutX="10.0" layoutY="195.0" text="Clasificación del nodulo" />
+                              <TextField fx:id="classificationTextField" disable="true" layoutX="10.0" layoutY="212.0" prefHeight="25.0" prefWidth="231.0" />
+                              <TextField fx:id="treatmentTextField" disable="true" layoutX="11.0" layoutY="254.0" prefHeight="25.0" prefWidth="232.0" />
+                              <Label fx:id="treatmentLabel" layoutX="10.0" layoutY="237.0" text="Tratamiento" />
+                              <Button fx:id="getResultButton" layoutX="14.0" layoutY="287.0" mnemonicParsing="false" onAction="#getResultButtonClick" text="Obtener resultados" />
+                              <Button fx:id="addPacientButton" layoutX="140.0" layoutY="287.0" mnemonicParsing="false" onAction="#addPacientButtonClick" text="Crear paciente" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Listado pacientes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="searchPIDLabel" layoutX="14.0" layoutY="222.0" text="Cédula" />
+                              <TextField fx:id="searchPIDTextField" layoutX="59.0" layoutY="218.0" />
+                              <Button fx:id="getAllPatientsButton" layoutX="14.0" layoutY="251.0" mnemonicParsing="false" onAction="#getAllPatientsButtonClick" prefHeight="44.0" prefWidth="131.0" text="Obtener todos los pacientes" wrapText="true" />
+                              <Button fx:id="searchPatientButton" layoutX="219.0" layoutY="218.0" mnemonicParsing="false" onAction="#searchPatientButtonClick" text="Buscar paciente" />
+                              <TextArea fx:id="patientTextArea" disable="true" layoutX="14.0" layoutY="13.0" prefHeight="200.0" prefWidth="583.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
