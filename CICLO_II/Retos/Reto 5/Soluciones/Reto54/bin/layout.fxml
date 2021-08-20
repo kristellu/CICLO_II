@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="bodyOfWaterLabel" layoutX="14.0" layoutY="14.0" text="Cuerpo de agua" />
+            <Label fx:id="nameLabel" layoutX="14.0" layoutY="31.0" text="Nombre" />
+            <TextField fx:id="nameTextField" layoutX="14.0" layoutY="48.0" />
+            <Label fx:id="idLabel" layoutX="14.0" layoutY="81.0" text="ID" />
+            <TextField fx:id="idTextField" layoutX="14.0" layoutY="98.0" />
+            <Label fx:id="typeOfWaterLabel" layoutX="14.0" layoutY="128.0" text="Tipo de agua" />
+            <TextField fx:id="typeOfWaterTextField" layoutX="14.0" layoutY="149.0" />
+            <Label fx:id="cityLabel" layoutX="179.0" layoutY="31.0" text="Ciudad" />
+            <TextField fx:id="cityTextField" layoutX="179.0" layoutY="48.0" />
+            <Label fx:id="bodyOfWaterTypeLabel" layoutX="178.0" layoutY="81.0" text="Tipo de cuerpo de agua" />
+            <TextField fx:id="bodyOfWaterTypeTextField" layoutX="179.0" layoutY="98.0" />
+            <Label fx:id="ircaLabel" layoutX="179.0" layoutY="128.0" text="IRCA" />
+            <TextField fx:id="ircaTextField" layoutX="178.0" layoutY="149.0" />
+            <Button fx:id="addBodyOfWaterButton" layoutX="346.0" layoutY="47.0" mnemonicParsing="false" onAction="#addBodyOfWaterButtonClick" text="Ingresar cuerpo de agua" />
+            <TextArea fx:id="textArea1" layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="250.0" />
+            <TextArea fx:id="textArea2" layoutX="278.0" layoutY="186.0" prefHeight="200.0" prefWidth="250.0" />
+            <Label layoutX="594.0" layoutY="14.0" text="Densidad poblacional" />
+            <Label fx:id="pNameLabel" layoutX="594.0" layoutY="31.0" text="Nombre" />
+            <TextField fx:id="pNameTextField" layoutX="592.0" layoutY="48.0" />
+            <Label fx:id="pIDLabel" layoutX="594.0" layoutY="77.0" text="ID" />
+            <TextField fx:id="pIDTextField" layoutX="592.0" layoutY="94.0" />
+            <Label fx:id="populationLabel" layoutX="865.0" layoutY="31.0" text="Cantidad de habitantes" />
+            <TextField fx:id="populationTextField" layoutX="863.0" layoutY="48.0" />
+            <ListView fx:id="populationDensityList" layoutX="592.0" layoutY="186.0" onMouseClicked="#itemMouseClick" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea fx:id="textArea3" layoutX="802.0" layoutY="186.0" prefHeight="200.0" prefWidth="250.0" />
+            <Button fx:id="addPopulationDensityButton" layoutX="594.0" layoutY="124.0" mnemonicParsing="false" onAction="#addPopulationDensityButtonClick" text="Ingresar densidad poblacional" />
+            <Button fx:id="addPopulationButton" layoutX="863.0" layoutY="82.0" mnemonicParsing="false" onAction="#addPopulationButtonClick" text="Añadir habitantes" />
+            <Button fx:id="processDataButton" layoutX="346.0" layoutY="82.0" mnemonicParsing="false" onAction="#processDataButtonClick" text="Procesar cuerpos de agua" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
