@@ -1,6 +1,7 @@
 # MISION_TIC
 
-En este repositorio se anexa toda la información correspondiente a los ciclos II y III de la Misión TIC 2022 - Uninorte.
+En este repositorio se anexa toda la información correspondiente a los ciclos II y III de la Misión TIC 2022 - Uninorte. 
+Repositorio para docentes.
 
 ### CICLO II - PROGRAMACION BÁSICA JAVA
 
